@@ -1,3 +1,6 @@
 %{
+  "aten": {:git, "git@github.com:rabbitmq/aten.git", "e7b76746925ff0b1272b86668dd8b16fbf2ef668", [branch: "master"]},
   "ex_unit_clustered_case": {:hex, :ex_unit_clustered_case, "0.3.2", "e4acd0e46c5d6f057d71a1798a1674d333309eb247bbd753af4c5dbe52971b1e", [:mix], [], "hexpm"},
+  "gen_batch_server": {:git, "git@github.com:rabbitmq/gen-batch-server.git", "b66ed5f1eeb738e1047441499baede944ac64570", [branch: "master"]},
+  "ra": {:git, "https://github.com/rabbitmq/ra", "e6a9f6d55a60f92c20ddb86b22dca93c9b5a7a7b", []},
 }
