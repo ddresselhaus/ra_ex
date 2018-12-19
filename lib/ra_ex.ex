@@ -111,12 +111,12 @@ defmodule RaEx do
     :ra.pipeline_command(server_id, command)
   end
 
-  def local_query(server_id, query_fun, timeout) do
-    :ra.local_query(server_id, query_fun, timeout)
-  end
-
   def local_query(server_id, query_fun) do
     :ra.local_query(server_id, query_fun)
+  end
+
+  def local_query(server_id, query_fun, timeout) do
+    :ra.local_query(server_id, query_fun, timeout)
   end
 
   def consistent_query(server_id, query_fun, timeout) do
