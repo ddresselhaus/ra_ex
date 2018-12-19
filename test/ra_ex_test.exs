@@ -14,17 +14,14 @@ defmodule RaExTest do
       cluster_name = "ra_kv"
       machine = {:module, RaKv, %{}}
       e = Cluster.call(a, RaEx, :start_cluster, [cluster_name, machine, members])
-      f = Cluster.call(b, RaEx, :process_command, [{:kv_a, a}, {:write, "dan", "dresselhaus"}])
+      f = Cluster.call(b, RaEx, :process_command, [{:kv_a, a}, {:write, "key", "value"}])
       g = Cluster.partition(cluster, 4)
-      h = Cluster.call(a, RaEx, :process_command, [{:kv_c, c}, {:write, "dan", "dresselhizi"}])
-      i = Cluster.call(b, RaEx, :process_command, [{:kv_b, b}, {:read, "dan"}])
+      h = Cluster.call(a, RaEx, :process_command, [{:kv_c, c}, {:write, "key", "value_2"}])
+      i = Cluster.call(b, RaEx, :process_command, [{:kv_b, b}, {:read, "key"}])
 
-      require IEx
-      IEx.pry()
-
-      RaEx.process_command({:kv_a, a}, {:write, "dan", "dresselhaus"})
-      {:ok, result, _leader} = RaEx.process_command({:kv_b, b}, {:read, "dan"})
-      assert result == "dresselhaus"
+      RaEx.process_command({:kv_a, a}, {:write, "key", "value_3"})
+      {:ok, result, _leader} = RaEx.process_command({:kv_b, b}, {:read, "key"})
+      assert result == "value_3"
     end
   end
 
