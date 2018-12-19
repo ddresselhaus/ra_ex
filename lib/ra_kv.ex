@@ -5,12 +5,16 @@ defmodule RaKv do
     %{}
   end
 
-  def apply(_meta, {:write, key, value}, effects, state) do
+  def apply(meta, {:write, key, value}, effects, state) do
     {Map.put(state, key, value), effects, :ok}
   end
 
   def apply(_meta, {:read, key}, effects, state) do
     reply = Map.get(state, key)
     {state, effects, reply}
+  end
+
+  def apply(_meta, {:set, new_state}, effects, state) do
+    {new_state, effects, :ok}
   end
 end
