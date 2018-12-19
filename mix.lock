@@ -1,6 +1,6 @@
 %{
-  "aten": {:git, "git@github.com:rabbitmq/aten.git", "e7b76746925ff0b1272b86668dd8b16fbf2ef668", [branch: "master"]},
+  "aten": {:hex, :aten, "0.5.1", "0a46b675fd285d2b4adec35d2ac18dd56932814338733293d6558c29671424ee", [:rebar3], [], "hexpm"},
   "ex_unit_clustered_case": {:hex, :ex_unit_clustered_case, "0.3.2", "e4acd0e46c5d6f057d71a1798a1674d333309eb247bbd753af4c5dbe52971b1e", [:mix], [], "hexpm"},
-  "gen_batch_server": {:git, "git@github.com:rabbitmq/gen-batch-server.git", "b66ed5f1eeb738e1047441499baede944ac64570", [branch: "master"]},
-  "ra": {:git, "https://github.com/rabbitmq/ra", "e6a9f6d55a60f92c20ddb86b22dca93c9b5a7a7b", []},
+  "gen_batch_server": {:hex, :gen_batch_server, "0.7.0", "fa458aeba2979c49f197f2cd33e0c39a42f31cff80040162ff07405fd9d3d303", [:rebar3], [], "hexpm"},
+  "ra": {:git, "https://github.com/rabbitmq/ra", "b6a0d626fe4e381fe27a40eef876cd17874db951", [ref: "b6a0d626"]},
 }
