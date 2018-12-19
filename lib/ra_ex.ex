@@ -40,7 +40,7 @@ defmodule RaEx do
   end
 
   def delete_cluster(server_ids, timeout) do
-    :ra.delete_server(server_ids, timeout)
+    :ra.delete_cluster(server_ids, timeout)
   end
 
   def start_or_restart_cluster(cluster_name, machine, members) do
@@ -115,8 +115,8 @@ defmodule RaEx do
     :ra.local_query(server_id, query_fun, timeout)
   end
 
-  def local_query(server_id, query_fun, timeout) do
-    :ra.local_query(server_id, query_fun, timeout)
+  def local_query(server_id, query_fun) do
+    :ra.local_query(server_id, query_fun)
   end
 
   def consistent_query(server_id, query_fun, timeout) do
