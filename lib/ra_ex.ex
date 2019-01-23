@@ -55,6 +55,14 @@ defmodule RaEx do
     :ra.process_command(server_id, command, timeout)
   end
 
+  def add_member(server_ref, server_id) do
+    :ra.add_member(server_ref, server_id)
+  end
+
+  def add_member(server_ref, server_id, timeout) do
+    :ra.add_member(server_ref, server_id, timeout)
+  end
+
   def remove_member(server_ref, server_id) do
     :ra.remove_member(server_ref, server_id)
   end
